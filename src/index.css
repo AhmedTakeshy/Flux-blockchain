@@ -4,6 +4,55 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
+.btn {
+  --border-width: 2px;
+  --border-radius: 24px;
+  --color-1: #191654;
+  --color-2: #43c6ac;
+}
+
+/* code */
+
+.btn {
+  width: 120px;
+  position: relative;
+  background: linear-gradient(to right, #191654, #43c6ac),
+    linear-gradient(to right, #191654, #43c6ac);
+  background-position: var(--border-radius) 0, var(--border-radius) 100%;
+  background-repeat: no-repeat;
+  background-size: calc(100% - var(--border-radius) - var(--border-radius))
+    var(--border-width);
+  padding: 12px 28px;
+  border-radius: var(--border-radius);
+  border: none;
+}
+
+.btn:before,
+.btn:after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: var(--border-radius);
+  top: 0;
+  bottom: 0;
+}
+
+.btn:before {
+  left: 0;
+  border: var(--border-width) solid var(--color-1);
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+  border-right-color: transparent;
+}
+
+.btn:after {
+  right: 0;
+  border: var(--border-width) solid var(--color-2);
+  border-top-right-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+  border-left-color: transparent;
+}
+
 @layer base {
   * {
     @apply font-[kanit];

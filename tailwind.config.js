@@ -4,8 +4,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        green: "#16a085",
-        yellow: "#f4d03f",
+        green: "#43C6AC",
+        yellow: "#191654",
+      },
+      backgroundImage: {
+        subs: "url(./assets/subscribe.jpg)",
       },
     },
   },
